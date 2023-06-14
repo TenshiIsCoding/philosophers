@@ -7,15 +7,17 @@
 # include <stdlib.h>
 # include <sys/wait.h>
 
-# define ERRMSG "philo: ./philo [philosophers] [time to die] [time to eat] [time to sleep] [times each philosopher must eat]\n"
+# define ERRMSG "philo: ./philo [philosophers] [time to die] [time to eat] [time to sleep] [how many times shoul a philosopher eat]\n"
 
 typedef struct s_philo
 {
-	int		eat_num;
-	int		position;
-	char	*position_str;
-	int		fork1;
-	int		fork2;
+	struct s_data	*vars;	
+	unsigned long	last_meal;
+	int				eat_num;
+	int				position;
+	char			*position_str;
+	int				fork1;
+	int				fork2;
 
 
 }	t_philo;
@@ -43,6 +45,7 @@ int	is_int(char *arg);
 int	ft_atoi(const char *str);
 int	ft_strlen(char *str);
 int	valid_args(int argc, char **argv, t_data *v);
+int	initialize_mutexes(t_data *vars);
 
 
 #endif

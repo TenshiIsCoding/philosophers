@@ -16,7 +16,11 @@ int	initialize_values(t_data *vars)
 		(free(vars->philos),free(vars->forks));
 		return (1);
 	}
-	
+	if (initialize_philosophers(vars))
+	{
+		(free(vars->philos),free(vars->forks));
+		return (1);
+	}
 }
 
 int main(int argc, char **argv)
@@ -29,6 +33,17 @@ int main(int argc, char **argv)
 		return (return_error("philo: Invalid arguments. \n"));
 	if (initialize_values(&vars))
 		return(return_error("philo: Error in initialization. \n"));
-	if (initialize_philosophers)
+	if (start_philosophers(argv, &vars))
+
 	
 }
+
+// int main() {
+//     struct timeval current_time;
+//     gettimeofday(&current_time, NULL);
+
+//     printf("Seconds: %ld\n", current_time.tv_sec);
+//     printf("Microseconds: %ld\n", current_time.tv_usec);
+
+//     return 0;
+// }

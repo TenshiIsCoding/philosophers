@@ -1,4 +1,7 @@
 SRCS = sources/tools.c \
+	   sources/ft_atoitoa.c \
+	   sources/onitialisation.c \
+	   sources/init_tools.c \
 	   philosophers.c
 
 NAME = philo
