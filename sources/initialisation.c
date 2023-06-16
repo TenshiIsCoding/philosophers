@@ -16,7 +16,6 @@ int	initialize_mutexes(t_data *vars)
 	if (pthread_mutex_init(&(vars->message), NULL))
 		return (1);
 	return (0);
-	
 }
 
 int	initialize_philosophers(t_data *vars)

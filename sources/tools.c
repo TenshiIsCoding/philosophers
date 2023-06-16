@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tools.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azaher <azaher@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/13 18:45:43 by azaher            #+#    #+#             */
+/*   Updated: 2023/06/13 18:45:43 by azaher           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philosophers.h"
 
 int	is_int(char *arg)
@@ -19,7 +31,7 @@ int	is_int(char *arg)
 	{
 		if (value > 214748364 || (value == 214748364
 				&& ((!sign && arg[i] - 48 > 7) || (sign && arg[i] - 48 > 8))))
-				return (1);
+			return (1);
 		else
 			value = (value * 10) + arg[i++] - 48;
 	}
@@ -36,7 +48,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int return_error(char *error)
+int	return_error(char *error)
 {
 	write(2, error, ft_strlen(error));
 	return (1);
@@ -63,6 +75,6 @@ int	valid_args(int argc, char **argv, t_data *v)
 		v->mx_eat = 0;
 	if (v->count < 1 || v->tt_die < 0 || v->tt_eat < 0 
 		|| v->tt_sleep < 0 || v->mx_eat < 0)
-	return (0);
+		return (0);
 }
 
