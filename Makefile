@@ -1,11 +1,24 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: azaher <azaher@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/18 06:39:52 by azaher            #+#    #+#              #
+#    Updated: 2023/06/18 06:39:52 by azaher           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS = sources/tools.c \
 	   sources/ft_atoitoa.c \
-	   sources/onitialisation.c \
+	   sources/initialisation.c \
 	   sources/init_tools.c \
+	   sources/philo_tools.c \
 	   philosophers.c
 
 NAME = philo
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 OBJS = ${SRCS:.c=.o}
 BOBJS = ${BSRCS:.c=.o}
 
