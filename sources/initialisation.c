@@ -80,7 +80,6 @@ void	*routine(void *philo)
 		my_sleep(vars->tt_eat, vars);
 	while (!vars->abort_cond && !vars->mx_eat)
 	{
-		printf("looped here\n");
 		philo_eat(philos);
 		philo_printmsg("is sleeping", philos, 0);
 		my_sleep(vars->tt_sleep, vars);

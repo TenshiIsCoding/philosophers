@@ -18,7 +18,7 @@ SRCS = sources/tools.c \
 	   philosophers.c
 
 NAME = philo
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS = -Wall -Wextra
 OBJS = ${SRCS:.c=.o}
 BOBJS = ${BSRCS:.c=.o}
 

@@ -18,7 +18,7 @@ void	philo_printmsg(char *message, t_philo *philo, int locknum)
 
 	pthread_mutex_lock(&philo->vars->message);
 	time = ft_itoa(fetch_time() - philo->vars->tt_start);
-	if (!philo->vars->abort_cond && !philo->vars->count_mx_eat)
+	if (!philo->vars->abort_cond && !philo->vars->mx_eat)
 		printf("%s %s %s\n", time, philo->position_str, message);
 	if (!locknum)
 		pthread_mutex_unlock(&philo->vars->message);
@@ -45,7 +45,7 @@ void	philo_death(t_data *vars, t_philo *philo)
 {
 	int	i;
 
-	while (!vars->count_mx_eat)
+	while (!vars->mx_eat)
 	{
 		i = 0;
 		while (i < vars->count && !vars->abort_cond)
@@ -61,7 +61,11 @@ void	philo_death(t_data *vars, t_philo *philo)
 		}
 		if (vars->abort_cond)
 			break ;
-		vars->count_mx_eat = (i == vars->count);
+		i = 0;
+		while (vars->count_mx_eat && i < vars->count
+			&& philo[i].eat_num >= vars->count_mx_eat)
+			i++;
+		vars->mx_eat = (i == vars->count);
 	}
 }
 

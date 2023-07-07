@@ -70,11 +70,11 @@ int	valid_args(int argc, char **argv, t_data *v)
 	v->tt_eat = ft_atoi(argv[3]);
 	v->tt_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
-		v->mx_eat = ft_atoi(argv[5]);
+		v->count_mx_eat = ft_atoi(argv[5]);
 	else
-		v->mx_eat = 0;
+		v->count_mx_eat = 0;
 	if (v->count < 1 || v->tt_die < 0 || v->tt_eat < 0 
-		|| v->tt_sleep < 0 || v->mx_eat < 0)
+		|| v->tt_sleep < 0 || v->count_mx_eat < 0)
 		return (1);
 	else
 		return (0);
